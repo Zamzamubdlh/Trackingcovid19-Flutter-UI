@@ -36,11 +36,11 @@ class GetPositif {
 
 // Provinsi
 class DataIndo {
-  final String url = "https://api.kawalcorona.com/indonesia/provinsi";
+  final String url = "http://apptrackingcovid19.herokuapp.com/api/provinsiapi";
   Future<List<CovidProvinsi>> getDataIndo() async {
     Response res = await get(url);
     if (res.statusCode == 200) {
-      List<dynamic> body = jsonDecode(res.body);
+      List<dynamic> body = jsonDecode(res.body)['data'];
       List<CovidProvinsi> dataIndo =
           body.map((dynamic item) => CovidProvinsi.fromJson(item)).toList();
       return dataIndo;

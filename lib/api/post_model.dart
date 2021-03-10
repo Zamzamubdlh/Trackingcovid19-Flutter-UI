@@ -45,23 +45,23 @@ class Post {
 // Provinsi
 class CovidProvinsi {
   final String provinsi;
-  final int kasus_Posi;
-  final int kasus_Sem;
-  final int kasus_Meni;
+  final int jumlah_positif;
+  final int jumlah_sembuh;
+  final int jumlah_meninggal;
 
   CovidProvinsi({
     @required this.provinsi,
-    @required this.kasus_Posi,
-    @required this.kasus_Sem,
-    @required this.kasus_Meni,
+    @required this.jumlah_positif,
+    @required this.jumlah_sembuh,
+    @required this.jumlah_meninggal,
   });
 
   factory CovidProvinsi.fromJson(Map<String, dynamic> json) {
     return CovidProvinsi(
-      provinsi: json['attributes']['Provinsi'] as String,
-      kasus_Posi: json['attributes']['Kasus_Posi'] as int,
-      kasus_Sem: json['attributes']['Kasus_Semb'] as int,
-      kasus_Meni: json['attributes']['Kasus_Meni'] as int,
+      provinsi: json['provinsi'] as String,
+      jumlah_positif: json['jumlah_positif'] as int,
+      jumlah_sembuh: json['jumlah_sembuh'] as int,
+      jumlah_meninggal: json['jumlah_meninggal'] as int,
     );
   }
 }

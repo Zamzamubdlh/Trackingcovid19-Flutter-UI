@@ -266,13 +266,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     DataCell(Text(
                                                         dataIndo.provinsi)),
                                                     DataCell(Text(dataIndo
-                                                        .kasus_Posi
+                                                        .jumlah_positif
                                                         .toString())),
                                                     DataCell(Text(dataIndo
-                                                        .kasus_Sem
+                                                        .jumlah_sembuh
                                                         .toString())),
                                                     DataCell(Text(dataIndo
-                                                        .kasus_Meni
+                                                        .jumlah_meninggal
                                                         .toString())),
                                                   ]))
                                               .toList(),
