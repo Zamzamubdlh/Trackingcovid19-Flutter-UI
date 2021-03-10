@@ -2,6 +2,7 @@ import 'package:covid19/constant.dart';
 import 'package:covid19/widgets/my_header.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:format_indonesia/format_indonesia.dart';
 
 import 'api/http_service.dart';
 import 'api/post_model.dart';
@@ -61,6 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final GetPositif _getPost = new GetPositif();
     final DataIndo _getIndo = new DataIndo();
     final DataGlobal _getGlobal = new DataGlobal();
+    var waktu = Waktu();
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -91,11 +93,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                     text: TextSpan(
                                       children: [
                                         TextSpan(
-                                          text: "Update terakhir : ",
+                                          text: "Terakhir Update : ",
                                           style: kTitleTextstyle,
                                         ),
                                         TextSpan(
-                                          text: "08 Maret 2021 21:40 WIB",
+                                          text: (waktu.yMMMMEEEEd()),
                                           style: TextStyle(
                                             color: kTextLightColor,
                                           ),
@@ -212,7 +214,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 ),
                                                 leading: CircleAvatar(
                                                   backgroundImage: AssetImage(
-                                                      'assets/icons/global.png'),
+                                                      'assets/icons/global_master.png'),
                                                 ),
                                               ),
                                             ),
@@ -398,7 +400,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         decoration: new BoxDecoration(
                                           image: new DecorationImage(
                                             image: new AssetImage(
-                                                'assets/images/indonesia-map.png'),
+                                                'assets/images/indo.png'),
                                           ),
                                         ),
                                         child: new Stack(
@@ -427,7 +429,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         decoration: new BoxDecoration(
                                           image: new DecorationImage(
                                             image: new AssetImage(
-                                                'assets/images/map.png'),
+                                                'assets/images/map_dunia.png'),
                                           ),
                                         ),
                                         child: new Stack(
